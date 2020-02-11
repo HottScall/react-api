@@ -8,4 +8,11 @@ button.addEventListener("click", e => {
 
 function getDataFromItunes() {
   var url = "https://itunes.apple.com/search?term=" + input.value;
+
+  fetch(url)
+    .then(data => data.json())
+    .then(json => {
+      console.log(json);
+    })
+    .catch(error => console.log(error));
 }
