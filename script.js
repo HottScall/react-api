@@ -8,8 +8,9 @@ button.addEventListener("click", e => {
 
 function getDataFromItunes() {
   var url = "https://itunes.apple.com/search?term=" + input.value;
+  let cors = "https://cors-anywhere.herokuapp.com/";
 
-  fetch(url)
+  fetch(cors + url)
     .then(data => data.json())
     .then(json => {
       console.log(json);
